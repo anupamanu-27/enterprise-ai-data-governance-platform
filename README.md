@@ -70,7 +70,9 @@ enterprise-ai-data-governance-platform/
 
 Lesson 1: Environment Setup - complete
 
-Lesson 2: Git & GitHub - in progress
+Lesson 2: Git & GitHub - complete
+
+Lesson 3: Python Project Structure - in progress
 
 ## Development Workflow
 
@@ -82,3 +84,19 @@ This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
 - A meaningful Git commit
 
 See [Git & GitHub Workflow](docs/git_github_workflow.md) for the project commit and repository rules.
+
+## Local Python Commands
+
+Run the platform health check:
+
+```powershell
+$env:PYTHONPATH="src"
+.\.venv\Scripts\python.exe -m governance_platform
+```
+
+Run tests:
+
+```powershell
+$env:PYTHONPATH="src"
+.\.venv\Scripts\python.exe -m unittest discover -s tests
+```
