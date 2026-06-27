@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+
+# Data and generated artifacts
+data/raw/*
+data/curated/*
+data/processed/*
+!data/raw/.gitkeep
+!data/curated/.gitkeep
+!data/processed/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker
+docker/.local/
+
