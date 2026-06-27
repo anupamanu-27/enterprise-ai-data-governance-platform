@@ -74,7 +74,9 @@ Lesson 2: Git & GitHub - complete
 
 Lesson 3: Python Project Structure - complete
 
-Lesson 4: Docker - in progress
+Lesson 4: Docker - complete
+
+Lesson 5: Postgres - in progress
 
 ## Development Workflow
 
@@ -115,4 +117,24 @@ Run the container:
 
 ```powershell
 docker run --rm enterprise-ai-governance-platform:lesson-04
+```
+
+## Postgres Commands
+
+Start local Postgres:
+
+```powershell
+docker compose up -d postgres
+```
+
+Check local Postgres:
+
+```powershell
+docker compose exec -T postgres psql -U governance_user -d governance_catalog -c "SELECT COUNT(*) FROM raw.customers;"
+```
+
+Stop local Postgres:
+
+```powershell
+docker compose down
 ```
