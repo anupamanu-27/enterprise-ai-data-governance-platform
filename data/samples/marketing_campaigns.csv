@@ -1,0 +1,6 @@
+campaign_id,campaign_name,channel,region,budget,start_date,end_date,owner_name
+CMP-001,Revenue Trust Launch,Email,West,45000.00,2025-01-01,2025-01-31,Marketing Analytics Lead
+CMP-002,Customer Quality Webinar,Webinar,North,30000.00,2025-02-01,2025-02-20,Demand Generation Manager
+CMP-003,PII Risk Awareness,Social,South,22000.00,2025-02-15,2025-03-10,Data Privacy Office
+CMP-004,Lineage Demo Series,Partner,East,38000.00,2025-03-01,2025-03-31,Partner Marketing Lead
+

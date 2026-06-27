@@ -78,7 +78,9 @@ Lesson 4: Docker - complete
 
 Lesson 5: Postgres - complete
 
-Lesson 6: MinIO - in progress
+Lesson 6: MinIO - complete
+
+Lesson 7: Data Ingestion Pipeline - in progress
 
 ## Development Workflow
 
@@ -160,4 +162,12 @@ Local login:
 ```text
 Username: minioadmin
 Password: minioadmin
+```
+
+## Data Ingestion Command
+
+Run the first ingestion pipeline:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\run_ingestion.py
 ```
