@@ -68,5 +68,17 @@ enterprise-ai-data-governance-platform/
 
 ## Current Status
 
-Lesson 1: Environment Setup
+Lesson 1: Environment Setup - complete
 
+Lesson 2: Git & GitHub - in progress
+
+## Development Workflow
+
+This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
+
+- A clear summary of what changed
+- A production mindset explanation
+- Interview questions
+- A meaningful Git commit
+
+See [Git & GitHub Workflow](docs/git_github_workflow.md) for the project commit and repository rules.
