@@ -76,7 +76,9 @@ Lesson 3: Python Project Structure - complete
 
 Lesson 4: Docker - complete
 
-Lesson 5: Postgres - in progress
+Lesson 5: Postgres - complete
+
+Lesson 6: MinIO - in progress
 
 ## Development Workflow
 
@@ -137,4 +139,25 @@ Stop local Postgres:
 
 ```powershell
 docker compose down
+```
+
+## MinIO Commands
+
+Start local MinIO and create buckets:
+
+```powershell
+docker compose up -d minio create-minio-buckets
+```
+
+Open the MinIO console:
+
+```text
+http://localhost:9001
+```
+
+Local login:
+
+```text
+Username: minioadmin
+Password: minioadmin
 ```
