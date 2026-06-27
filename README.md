@@ -72,7 +72,9 @@ Lesson 1: Environment Setup - complete
 
 Lesson 2: Git & GitHub - complete
 
-Lesson 3: Python Project Structure - in progress
+Lesson 3: Python Project Structure - complete
+
+Lesson 4: Docker - in progress
 
 ## Development Workflow
 
@@ -99,4 +101,18 @@ Run tests:
 ```powershell
 $env:PYTHONPATH="src"
 .\.venv\Scripts\python.exe -m unittest discover -s tests
+```
+
+## Docker Commands
+
+Build the local image:
+
+```powershell
+docker build -t enterprise-ai-governance-platform:lesson-04 .
+```
+
+Run the container:
+
+```powershell
+docker run --rm enterprise-ai-governance-platform:lesson-04
 ```
