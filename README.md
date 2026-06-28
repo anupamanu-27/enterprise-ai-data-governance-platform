@@ -92,6 +92,8 @@ Lesson 11: dbt Core - complete
 
 Lesson 12: Great Expectations - complete
 
+Lesson 13: Metadata Catalog - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -257,4 +259,18 @@ The latest generated quality report is written to:
 
 ```text
 quality/reports/latest_quality_report.json
+```
+
+## Metadata Catalog Commands
+
+Build the metadata catalog:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\build_metadata_catalog.py
+```
+
+The generated catalog is written to:
+
+```text
+data/catalog/metadata_catalog.json
 ```

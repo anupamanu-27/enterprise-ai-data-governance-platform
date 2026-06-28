@@ -16,9 +16,11 @@ venv/
 data/raw/*
 data/curated/*
 data/processed/*
+data/catalog/*
 !data/raw/.gitkeep
 !data/curated/.gitkeep
 !data/processed/.gitkeep
+!data/catalog/.gitkeep
 
 # Logs
 *.log

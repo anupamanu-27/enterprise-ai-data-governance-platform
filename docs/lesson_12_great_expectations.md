@@ -35,7 +35,6 @@ docker compose run --rm dbt run
 Run the Great Expectations quality checks:
 
 ```powershell
-$env:PYTHONPATH="src;."
 .\.venv\Scripts\python.exe scripts\run_quality_checks.py
 ```
 
