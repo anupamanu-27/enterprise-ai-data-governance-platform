@@ -10,6 +10,8 @@ from typing import Any
 import psycopg2
 import psycopg2.extras
 
+from governance_platform.pii import classify_columns, summarize_pii
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_QUALITY_REPORT_PATH = PROJECT_ROOT / "quality" / "reports" / "latest_quality_report.json"
@@ -224,6 +226,8 @@ def build_catalog(report_path: Path = DEFAULT_QUALITY_REPORT_PATH) -> dict[str, 
         metadata = governed_assets.get(asset_id, default_asset_metadata(schema_name, table_name))
         quality_summary = quality_lookup.get(asset_id)
         effective_score = calculate_effective_trust_score(metadata.base_trust_score, quality_summary)
+        classified_columns = classify_columns(columns_by_asset.get(asset_id, []))
+        pii_summary = summarize_pii(classified_columns)
 
         catalog_assets.append(
             {
@@ -235,13 +239,14 @@ def build_catalog(report_path: Path = DEFAULT_QUALITY_REPORT_PATH) -> dict[str, 
                 "asset_type": metadata.asset_type,
                 "owner_name": metadata.owner_name,
                 "business_domain": metadata.business_domain,
-                "contains_pii": metadata.contains_pii,
+                "contains_pii": metadata.contains_pii or pii_summary["contains_pii"],
                 "description": metadata.description,
                 "base_trust_score": metadata.base_trust_score,
                 "effective_trust_score": effective_score,
                 "trust_band": trust_band(effective_score),
+                "pii_summary": pii_summary,
                 "quality": quality_summary,
-                "columns": columns_by_asset.get(asset_id, []),
+                "columns": classified_columns,
                 "glossary_terms": glossary_terms.get(asset_id, []),
             }
         )

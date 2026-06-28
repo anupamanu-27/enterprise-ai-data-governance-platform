@@ -94,6 +94,8 @@ Lesson 12: Great Expectations - complete
 
 Lesson 13: Metadata Catalog - complete
 
+Lesson 14: PII Detection and Classification - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -274,3 +276,5 @@ The generated catalog is written to:
 ```text
 data/catalog/metadata_catalog.json
 ```
+
+The catalog also includes column-level PII and sensitivity classification.
