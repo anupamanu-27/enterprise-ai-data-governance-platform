@@ -84,6 +84,8 @@ Lesson 7: Data Ingestion Pipeline - complete
 
 Lesson 8: Spark / PySpark - complete
 
+Lesson 9: Airflow - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -180,4 +182,24 @@ Run the campaign summary Spark job:
 
 ```powershell
 docker compose run --rm spark /opt/spark/bin/spark-submit jobs/spark/build_campaign_summary.py
+```
+
+## Airflow Commands
+
+Start Airflow:
+
+```powershell
+docker compose up -d airflow
+```
+
+Open Airflow:
+
+```text
+http://localhost:8080
+```
+
+List DAGs:
+
+```powershell
+docker compose exec airflow airflow dags list
 ```

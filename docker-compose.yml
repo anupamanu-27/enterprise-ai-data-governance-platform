@@ -70,6 +70,30 @@ services:
     volumes:
       - ./:/workspace
 
+  airflow:
+    image: apache/airflow:2.10.5
+    container_name: governance-airflow
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      AIRFLOW_UID: "50000"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./orchestration/airflow/dags:/opt/airflow/dags
+      - ./data:/workspace/data
+      - ./jobs:/workspace/jobs
+      - ./scripts:/workspace/scripts
+      - ./src:/workspace/src
+    command: standalone
+
 volumes:
   postgres_data:
   minio_data:
