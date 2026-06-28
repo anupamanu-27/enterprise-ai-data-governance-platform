@@ -88,6 +88,8 @@ Lesson 9: Airflow - complete
 
 Lesson 10: Delta Lake - complete
 
+Lesson 11: dbt Core - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -212,4 +214,24 @@ Build the curated campaign Delta table:
 
 ```powershell
 docker compose run --rm spark /opt/spark/bin/spark-submit --packages io.delta:delta-spark_2.12:3.2.0 --conf "spark.jars.ivy=/tmp/.ivy2" --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" jobs/spark/build_campaign_delta_table.py
+```
+
+## dbt Commands
+
+Check dbt connection:
+
+```powershell
+docker compose run --rm dbt debug
+```
+
+Run dbt models:
+
+```powershell
+docker compose run --rm dbt run
+```
+
+Run dbt tests:
+
+```powershell
+docker compose run --rm dbt test
 ```

@@ -1,0 +1,13 @@
+enterprise_ai_governance:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | int }}"
+      user: "{{ env_var('POSTGRES_USER', 'governance_user') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'change_me') }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'governance_catalog') }}"
+      schema: analytics
+      threads: 4
+

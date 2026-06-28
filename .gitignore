@@ -23,6 +23,12 @@ data/processed/*
 *.log
 logs/
 
+# dbt
+transformations/dbt/.user.yml
+transformations/dbt/target/
+transformations/dbt/dbt_packages/
+transformations/dbt/logs/
+
 # OS and editor
 .DS_Store
 Thumbs.db
@@ -31,4 +37,3 @@ Thumbs.db
 
 # Docker
 docker/.local/
-

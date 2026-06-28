@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw source-style data loaded into Postgres for the governance platform.
+    schema: raw
+    tables:
+      - name: customers
+        description: Raw customer master data.
+        columns:
+          - name: customer_id
+            tests:
+              - not_null
+              - unique
+          - name: email
+            description: Customer email address. This is PII.
+      - name: products
+        description: Raw product catalog data.
+        columns:
+          - name: product_id
+            tests:
+              - not_null
+              - unique
+      - name: sales_orders
+        description: Raw sales transactions.
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+              - unique
+      - name: support_tickets
+        description: Raw customer support tickets.
+        columns:
+          - name: ticket_id
+            tests:
+              - not_null
+              - unique
+      - name: marketing_campaigns
+        description: Raw marketing campaign data loaded by the ingestion pipeline.
+        columns:
+          - name: campaign_id
+            tests:
+              - not_null
+              - unique
+

@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mart_customer_revenue
+    description: Customer-level revenue mart used for analytics and governance demonstrations.
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: total_revenue
+        description: Total revenue from all known sales orders.
+      - name: is_active_customer
+        description: True when the customer has at least one order in the source data.
+
+  - name: mart_governance_asset_health
+    description: Governance mart that groups assets into trust bands.
+    columns:
+      - name: asset_id
+        data_tests:
+          - not_null
+          - unique
+      - name: trust_band
+        description: Business-friendly trust score category.

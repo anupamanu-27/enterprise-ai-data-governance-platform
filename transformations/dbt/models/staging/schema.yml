@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: Clean staging view for customer master data.
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: email
+        description: PII email field that will be classified in governance lessons.
+
+  - name: stg_sales_orders
+    description: Clean staging view for sales orders.
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_marketing_campaigns
+    description: Clean staging view for campaign data loaded by the ingestion pipeline.
+    columns:
+      - name: campaign_id
+        data_tests:
+          - not_null
+          - unique
