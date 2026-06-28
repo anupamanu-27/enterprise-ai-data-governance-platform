@@ -62,7 +62,7 @@ services:
     entrypoint: ["/bin/sh", "-c"]
 
   spark:
-    image: apache/spark:latest
+    image: apache/spark:3.5.5
     container_name: governance-spark
     working_dir: /workspace
     environment:

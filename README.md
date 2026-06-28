@@ -86,6 +86,8 @@ Lesson 8: Spark / PySpark - complete
 
 Lesson 9: Airflow - complete
 
+Lesson 10: Delta Lake - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -202,4 +204,12 @@ List DAGs:
 
 ```powershell
 docker compose exec airflow airflow dags list
+```
+
+## Delta Lake Command
+
+Build the curated campaign Delta table:
+
+```powershell
+docker compose run --rm spark /opt/spark/bin/spark-submit --packages io.delta:delta-spark_2.12:3.2.0 --conf "spark.jars.ivy=/tmp/.ivy2" --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog" jobs/spark/build_campaign_delta_table.py
 ```
