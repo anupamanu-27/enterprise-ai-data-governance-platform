@@ -80,7 +80,9 @@ Lesson 5: Postgres - complete
 
 Lesson 6: MinIO - complete
 
-Lesson 7: Data Ingestion Pipeline - in progress
+Lesson 7: Data Ingestion Pipeline - complete
+
+Lesson 8: Spark / PySpark - complete
 
 ## Development Workflow
 
@@ -170,4 +172,12 @@ Run the first ingestion pipeline:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\run_ingestion.py
+```
+
+## Spark Command
+
+Run the campaign summary Spark job:
+
+```powershell
+docker compose run --rm spark /opt/spark/bin/spark-submit jobs/spark/build_campaign_summary.py
 ```

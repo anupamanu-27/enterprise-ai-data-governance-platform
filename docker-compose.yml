@@ -61,6 +61,15 @@ services:
       MINIO_BUCKET_RAW: ${MINIO_BUCKET_RAW:-raw}
     entrypoint: ["/bin/sh", "-c"]
 
+  spark:
+    image: apache/spark:latest
+    container_name: governance-spark
+    working_dir: /workspace
+    environment:
+      SPARK_MODE: client
+    volumes:
+      - ./:/workspace
+
 volumes:
   postgres_data:
   minio_data:
