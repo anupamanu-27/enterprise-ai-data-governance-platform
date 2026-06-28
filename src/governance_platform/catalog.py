@@ -10,6 +10,7 @@ from typing import Any
 import psycopg2
 import psycopg2.extras
 
+from governance_platform.lineage import lineage_graph, lineage_summary
 from governance_platform.pii import classify_columns, summarize_pii
 
 
@@ -245,6 +246,7 @@ def build_catalog(report_path: Path = DEFAULT_QUALITY_REPORT_PATH) -> dict[str, 
                 "effective_trust_score": effective_score,
                 "trust_band": trust_band(effective_score),
                 "pii_summary": pii_summary,
+                "lineage": lineage_summary(asset_id),
                 "quality": quality_summary,
                 "columns": classified_columns,
                 "glossary_terms": glossary_terms.get(asset_id, []),
@@ -255,6 +257,7 @@ def build_catalog(report_path: Path = DEFAULT_QUALITY_REPORT_PATH) -> dict[str, 
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "asset_count": len(catalog_assets),
         "quality_report_available": quality_report.get("overall_success") is not None,
+        "lineage_graph": lineage_graph(),
         "assets": catalog_assets,
     }
 

@@ -96,6 +96,8 @@ Lesson 13: Metadata Catalog - complete
 
 Lesson 14: PII Detection and Classification - complete
 
+Lesson 15: Lineage - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -278,3 +280,5 @@ data/catalog/metadata_catalog.json
 ```
 
 The catalog also includes column-level PII and sensitivity classification.
+
+The catalog also includes upstream and downstream lineage metadata.
