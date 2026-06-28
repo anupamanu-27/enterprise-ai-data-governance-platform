@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+*.egg-info/
 .venv/
 venv/
 
@@ -28,6 +29,10 @@ transformations/dbt/.user.yml
 transformations/dbt/target/
 transformations/dbt/dbt_packages/
 transformations/dbt/logs/
+
+# Quality reports
+quality/reports/*.json
+!quality/reports/.gitkeep
 
 # OS and editor
 .DS_Store

@@ -90,6 +90,8 @@ Lesson 10: Delta Lake - complete
 
 Lesson 11: dbt Core - complete
 
+Lesson 12: Great Expectations - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -234,4 +236,25 @@ Run dbt tests:
 
 ```powershell
 docker compose run --rm dbt test
+```
+
+## Great Expectations Commands
+
+Install project dependencies:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e .
+```
+
+Run data quality checks:
+
+```powershell
+$env:PYTHONPATH="src;."
+.\.venv\Scripts\python.exe scripts\run_quality_checks.py
+```
+
+The latest generated quality report is written to:
+
+```text
+quality/reports/latest_quality_report.json
 ```

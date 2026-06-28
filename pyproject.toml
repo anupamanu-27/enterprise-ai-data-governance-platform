@@ -3,7 +3,17 @@ name = "enterprise-ai-data-governance-platform"
 version = "0.1.0"
 description = "AI-powered enterprise data governance and catalog platform."
 requires-python = ">=3.12"
+dependencies = [
+    "great_expectations==1.18.2",
+    "psycopg2-binary==2.9.12",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.unittest]
 start-dir = "tests"
-
