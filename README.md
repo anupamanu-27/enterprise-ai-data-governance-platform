@@ -102,6 +102,8 @@ Lesson 16: Embeddings - complete
 
 Lesson 17: Qdrant Vector Database - complete
 
+Lesson 18: RAG Retrieval Layer - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -318,4 +320,12 @@ Search the catalog:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\search_qdrant.py "which tables contain customer pii"
+```
+
+## RAG Retrieval Commands
+
+Retrieve cited RAG context:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\retrieve_rag_context.py "which tables contain customer pii"
 ```
