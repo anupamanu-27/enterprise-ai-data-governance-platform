@@ -112,6 +112,16 @@ services:
       - ./:/workspace
     entrypoint: ["dbt"]
 
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: governance-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
 volumes:
   postgres_data:
   minio_data:
+  qdrant_data:

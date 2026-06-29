@@ -100,6 +100,8 @@ Lesson 15: Lineage - complete
 
 Lesson 16: Embeddings - complete
 
+Lesson 17: Qdrant Vector Database - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -296,4 +298,24 @@ The generated embeddings are written to:
 
 ```text
 data/embeddings/catalog_embeddings.json
+```
+
+## Qdrant Commands
+
+Start Qdrant:
+
+```powershell
+docker compose up -d qdrant
+```
+
+Load embeddings into Qdrant:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\load_qdrant.py
+```
+
+Search the catalog:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\search_qdrant.py "which tables contain customer pii"
 ```
