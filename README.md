@@ -104,6 +104,8 @@ Lesson 17: Qdrant Vector Database - complete
 
 Lesson 18: RAG Retrieval Layer - complete
 
+Lesson 19: LLM Answer Layer - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -328,4 +330,12 @@ Retrieve cited RAG context:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\retrieve_rag_context.py "which tables contain customer pii"
+```
+
+## LLM Answer Commands
+
+Answer a governance question with citations:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\answer_governance_question.py "which tables contain customer pii"
 ```
