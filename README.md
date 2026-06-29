@@ -106,6 +106,8 @@ Lesson 18: RAG Retrieval Layer - complete
 
 Lesson 19: LLM Answer Layer - complete
 
+Lesson 20: AI Agent Layer - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -338,4 +340,12 @@ Answer a governance question with citations:
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\answer_governance_question.py "which tables contain customer pii"
+```
+
+## AI Agent Commands
+
+Run the governance agent:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\run_governance_agent.py "which tables contain customer pii"
 ```
