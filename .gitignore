@@ -17,10 +17,12 @@ data/raw/*
 data/curated/*
 data/processed/*
 data/catalog/*
+data/embeddings/*
 !data/raw/.gitkeep
 !data/curated/.gitkeep
 !data/processed/.gitkeep
 !data/catalog/.gitkeep
+!data/embeddings/.gitkeep
 
 # Logs
 *.log

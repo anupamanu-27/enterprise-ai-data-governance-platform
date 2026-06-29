@@ -98,6 +98,8 @@ Lesson 14: PII Detection and Classification - complete
 
 Lesson 15: Lineage - complete
 
+Lesson 16: Embeddings - complete
+
 ## Development Workflow
 
 This project follows a lesson-by-lesson Git workflow. Each lesson ends with:
@@ -255,7 +257,6 @@ Install project dependencies:
 Run data quality checks:
 
 ```powershell
-$env:PYTHONPATH="src;."
 .\.venv\Scripts\python.exe scripts\run_quality_checks.py
 ```
 
@@ -282,3 +283,17 @@ data/catalog/metadata_catalog.json
 The catalog also includes column-level PII and sensitivity classification.
 
 The catalog also includes upstream and downstream lineage metadata.
+
+## Embedding Commands
+
+Build local catalog embeddings:
+
+```powershell
+.\.venv\Scripts\python.exe scripts\build_embeddings.py
+```
+
+The generated embeddings are written to:
+
+```text
+data/embeddings/catalog_embeddings.json
+```
